@@ -4,7 +4,12 @@
   "manifest_version": 2,
   "homepage_url": "https://login.utexas.edu/login/cdcservlet?goto=https%3A%2F%2Futdirect.utexas.edu%3A443%2Fregistration%2FchooseSemester.WBX&RequestID=1156493852&MajorVersion=1&MinorVersion=0&ProviderID=https%3A%2F%2Futdirect.utexas.edu%3A443%2Famagent%3FRealm%3D%2Fadmin%2Futdirect-realm&IssueInstant=2016-06-19T23%3A49%3A31Z",
   "description": "A google extension that fetches information from ratemyprofessor.com in order to ease registering for classes.",
-
+  "icons":{
+    "16": "icons/Icon.iconset/Icon_16x16.png",
+    "32":"icons/Icon.iconset/Icon_32x32.png",
+    "48":"icons/Icon.iconset/Icon_16x16@3x.png",
+    "128":"icons/Icon.iconset/Icon_128x128.png",
+  },
 
 "background": {
   "scripts":[
