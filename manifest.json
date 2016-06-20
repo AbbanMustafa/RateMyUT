@@ -4,4 +4,13 @@
   "manifest_version": 2,
   "description": "A google extension that fetches information from ratemyprofessor.com in order to ease registering for classes.",
   "icons": "48: "sampleicon.png",
-}
+},
+"background": {
+  "scripts":[
+    "background.js"
+  ],
+  "persistent": true
+},
+"permissions":[
+  "http://www.ratemyprofessors.com/ShowRatings.jsp?tid=*"
+],
