@@ -2,15 +2,22 @@
   "name": "Ratemyut",
   "version": "1.0",
   "manifest_version": 2,
+  "homepage_url": "https://login.utexas.edu/login/cdcservlet?goto=https%3A%2F%2Futdirect.utexas.edu%3A443%2Fregistration%2FchooseSemester.WBX&RequestID=1156493852&MajorVersion=1&MinorVersion=0&ProviderID=https%3A%2F%2Futdirect.utexas.edu%3A443%2Famagent%3FRealm%3D%2Fadmin%2Futdirect-realm&IssueInstant=2016-06-19T23%3A49%3A31Z",
   "description": "A google extension that fetches information from ratemyprofessor.com in order to ease registering for classes.",
-  "icons": "48: "sampleicon.png",
-},
+
+
 "background": {
   "scripts":[
     "background.js"
   ],
   "persistent": true
 },
+
+
 "permissions":[
-  "http://www.ratemyprofessors.com/ShowRatings.jsp?tid=*"
+  "background",
+  "http://www.ratemyprofessors.com/ShowRatings.jsp?tid=*",
+  "https://www.myedu.com/University-of-Texas-at-Austin/school/2719/course/by-department/",
+  "https://www.myedu.com/*",
 ],
+}
