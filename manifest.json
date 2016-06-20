@@ -17,6 +17,7 @@
 "permissions":[
   "background",
   "http://www.ratemyprofessors.com/ShowRatings.jsp?tid=*",
+  "https://utdirect.utexas.edu/apps/registrar/course_schedule/*"
   "https://www.myedu.com/University-of-Texas-at-Austin/school/2719/course/by-department/",
   "https://www.myedu.com/*",
 ],
