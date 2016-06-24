@@ -11,13 +11,10 @@
     "48":"icons/Icon.iconset/Icon_16x16@3x.png",
     "128":"icons/Icon.iconset/Icon_128x128.png",
           },
-
   "background": {
     "scripts":["background.js"],
     "persistent": true
                 },
-
-
   "permissions":[
     "background",
     "http://www.ratemyprofessors.com/ShowRatings.jsp?tid=*",
