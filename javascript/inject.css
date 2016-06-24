@@ -1,0 +1,26 @@
+#RateMyUt {
+    border: 1px solid #181818;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.section {
+    display: inline-block;
+    width: 30%;
+    padding: 3px;
+    vertical-align: top;
+}
+
+#ratemyut-data {
+    display: none;
+}
+
+.view-data {
+    width: 100px;
+    background: #BCD6E6;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto !important;
+}
