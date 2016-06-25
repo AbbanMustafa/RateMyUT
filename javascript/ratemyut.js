@@ -87,7 +87,7 @@ Ratemyut.prototype.makeViewDataButton = function (teacher, course) {
     button.on('click', function () {
         ratemyut.reloadData($(this).data('teacher'), $(this).data('course'));
         $('html, body').animate({
-            scrollTop: $("#planner-helper").offset().top
+            scrollTop: $("#ratemyut-helper").offset().top
         }, 1000);
     });
 
@@ -171,7 +171,7 @@ ratemyut.prototype.attachButtonToSearchResults = function () {
  */
 ratemyut.prototype.createElement = function () {
     this.element = $(
-        '<div id="planner-helper">' +
+        '<div id="ratemyut">' +
             '<h2>Rate My UT Data</h2>' +
             '<div id="ratemyut"></div>' +
             '<div id="ratemyut-nodata">To view a professor\'s data, click the "View Data" button ' +
@@ -193,10 +193,10 @@ ratemyut.prototype.abort = function () {
     this.aborted = true;
 
     var message = `
-        Sorry, it appears that either WebReg or one of the data dependencies for Planner Helper
+        Sorry, it appears that either WebReg or one of the data dependencies for ratemyut
         have changed their format. An error report has been sent and an update will be released
-        soon to make Planner Helper compatible with these changes.`;
-    this.element.children('#planner-helper-data').text(message);
+        soon to make ratemyut compatible with these changes.`;
+    this.element.children('#ratemyut-data').text(message);
     this.disableSearchEvent();
 };
 
@@ -215,7 +215,7 @@ ratemyut.prototype.reloadData = function (teacher, course) {
     this.teacher = jQuery.extend({}, teacher);
     this.course = jQuery.extend({}, course);
 
-    this.element.find('h2').text('Planner Helper Data for ' + teacher.fname + ' ' + teacher.lname + ', ' + course.subjectCode + course.courseCode);
+    this.element.find('h2').text('Rate my UT Data for ' + teacher.fname + ' ' + teacher.lname + ', ' + course.subjectCode + course.courseCode);
 
     var rmpDeferred = $.Deferred();
     var capeDeferred = $.Deferred();
@@ -235,6 +235,6 @@ ratemyut.prototype.reloadData = function (teacher, course) {
         _gradeDist.updateUI(_gradeDist.currentCourse);
     });
 
-    $('#planner-helper-data').show();
-    $('#planner-helper-nodata').hide();
+    $('#ratemyut-data').show();
+    $('#ratemyut-nodata').hide();
 };
