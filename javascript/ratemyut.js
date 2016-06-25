@@ -27,7 +27,7 @@ function RateMyUT() {
  * Initialize and test some variables that we need.
  * @private
  */
-PlannerHelper.prototype.init = function () {
+ratemyut.prototype.init = function () {
     // Insert the main element into the page
     this.$searchDiv = $('#search-div-0');
     this.errorHandler.invariant(this.$searchDiv.length, 1);
@@ -42,14 +42,14 @@ PlannerHelper.prototype.init = function () {
 /**
  * @private
  */
-PlannerHelper.prototype.enableSearchEvent = function () {
+ratemyut.prototype.enableSearchEvent = function () {
     this.$searchContainer.on('DOMNodeInserted', _.debounce(this.attachButtonToSearchResults, 300).bind(this));
 };
 
 /**
  * @private
  */
-PlannerHelper.prototype.disableSearchEvent = function () {
+ratemyut.prototype.disableSearchEvent = function () {
     this.$searchContainer.off('DOMNodeInserted');
 };
 
@@ -59,7 +59,7 @@ PlannerHelper.prototype.disableSearchEvent = function () {
  * name.
  * @private
  */
-PlannerHelper.prototype.getDataFromRow = function ($row) {
+ratemyut.prototype.getDataFromRow = function ($row) {
     var data = {};
 
     $row.children().each(function (index, cellElement) {
@@ -77,15 +77,15 @@ PlannerHelper.prototype.getDataFromRow = function ($row) {
  * Creates a button that will show a teacher's data if it's clicked.
  * @returns {jQuery}
  */
-PlannerHelper.prototype.makeViewDataButton = function (teacher, course) {
-    // Save `this` as plannerHelper to prevent it being lost in the anonymous function.
-    var plannerHelper = this;
+Ratemyut.prototype.makeViewDataButton = function (teacher, course) {
+    // Save `this` as ratemyut to prevent it being lost in the anonymous function.
+    var ratemyut = this;
 
     var button = $('<input class="view-data" type="button" value="View Data" />');
     button.data('course', course);
     button.data('teacher', teacher);
     button.on('click', function () {
-        plannerHelper.reloadData($(this).data('teacher'), $(this).data('course'));
+        ratemyut.reloadData($(this).data('teacher'), $(this).data('course'));
         $('html, body').animate({
             scrollTop: $("#planner-helper").offset().top
         }, 1000);
@@ -98,7 +98,7 @@ PlannerHelper.prototype.makeViewDataButton = function (teacher, course) {
  * Goes through all the search results and attaches the "View Data" button to them.
  * @private
  */
-PlannerHelper.prototype.attachButtonToSearchResults = function () {
+ratemyut.prototype.attachButtonToSearchResults = function () {
     // Prevent firing this event while running this event (causing an infinite loop).
     this.disableSearchEvent();
 
@@ -169,20 +169,19 @@ PlannerHelper.prototype.attachButtonToSearchResults = function () {
  *
  * @private
  */
-PlannerHelper.prototype.createElement = function () {
+ratemyut.prototype.createElement = function () {
     this.element = $(
         '<div id="planner-helper">' +
             '<h2>Rate My UT Data</h2>' +
             '<div id="ratemyut"></div>' +
             '<div id="ratemyut-nodata">To view a professor\'s data, click the "View Data" button ' +
             'that appears next to the professor\'s name in the search results.<br /><br />' +
-            'If you encounter a bug or have any feature requests for the Planner Helper Chrome extension ' +
+            'If you encounter a bug or have any feature requests for the Rate my UT Chrome extension ' +
             'please feel free to <a href="mailto:jadelane@ucsd.edu">email me</a>. Please note that ' +
-            'I am not a part of the WebReg team and bug reports for WebReg should not be sent to me.' +
             '</div>' +
         '</div>'
     );
-    this.element.find('#planner-helper-data').append(this.rmp.elements.main, this.cape.elements.main, this.gradeDist.elements.main);
+    this.element.find('#ratemyut-data').append(this.rmp.elements.main, this.cape.elements.main, this.gradeDist.elements.main);
 };
 
 /**
@@ -190,7 +189,7 @@ PlannerHelper.prototype.createElement = function () {
  *
  * @private
  */
-PlannerHelper.prototype.abort = function () {
+ratemyut.prototype.abort = function () {
     this.aborted = true;
 
     var message = `
@@ -204,7 +203,7 @@ PlannerHelper.prototype.abort = function () {
 /**
  * @private
  */
-PlannerHelper.prototype.reloadData = function (teacher, course) {
+ratemyut.prototype.reloadData = function (teacher, course) {
     // Do nothing if we're trying to reload the data for the same prof and teacher
     if (JSON.stringify(this.teacher) === JSON.stringify(teacher) &&
         JSON.stringify(this.course) === JSON.stringify(course)) {
