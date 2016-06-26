@@ -7,5 +7,5 @@ $(document).ready(function () {
         return;
     }
 
-    var plannerHelper = new PlannerHelper();
+    var ratemyut = new RateMyUt();
 });
