@@ -11,6 +11,30 @@ function RMP(errorHandler) {
     //It will replace them with newFName and newLName
 
 
+    //This is for teachers who have a different name on the class planner and RMP
+    //When fetching data it will look if the teacher matches oldFName and oldLname and if they do
+    //It will replace them with newFName and newLName
+    this.teacherReplace = [
+        {
+            oldFName: 'Michael',
+            oldLName: 'Scott',
+            newFName: 'Mike',
+            newLName: 'Scott'
+        },
+        {
+            oldFName: 'Stephen',
+            oldLName: 'Reese',
+            newFName: 'Steve',
+            newLName: 'Reese'
+        },
+    
+    ]
+
+}
+
+
+
+
     RATEMYPROFESSOR.prototype = Object.create(DataSection.prototype);
     RATEMYPROFESSOR.prototype.constructor = RATEMYPROFESSOR;
 
