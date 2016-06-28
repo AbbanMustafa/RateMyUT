@@ -20,4 +20,4 @@ var callback = function(professor) {
   console.log("First comment: " + professor.comments[0]);
 };
 
-ut.get("Mike Scott", callback);
+ut.get("fname lname", callback);
